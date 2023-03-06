@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ u }}{% endblock %}
+
+{% block content %}
+  <!-- Page Content -->
+  <!-- Heading Starts Here -->
+  <div class="page-heading header-text">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Список пользователя {{ u }}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Heading Ends Here -->
+
+
+  <!-- Services Starts Here -->
+  <div class="services-section services-page">
+    <div class="container">
+        <!-- <div class="col-md-4 col-sm-6 col-xs-12"> -->
+          {% for w_list in wishlists %}
+          <a href="{% url 'detail_wishlist' w_list.pk %}">
+          <div class="service-item">
+            {% if w_list.image %}
+            <img src="{{w_list.image.url}}" height="150">
+            {% else %}
+            <img src="https://dn.ru/storage/images/aquasfera/zaglushki/latun/9017.jpg" height="150">
+            {% endif %}
+            <h4>{{ w_list.title }}</h4>
+            <p>{{ w_list.description }}</p>
+          </div>
+          </a>
+          {% empty %}
+          <p>{{ usr }}</p>
+          <h2>Тут пусто</h2>
+          <br>
+          <br>
+          <br>
+          <br>
+          {% endfor %}
+        <!-- </div> -->
+
+        {% include 'inc/_pagination.html' %}
+      </div>
+    </div>
+  </div>
+  <!-- Services Ends Here -->
+{% endblock %}

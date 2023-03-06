@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block title %}Регистрация{% endblock %}
+
+{% block content %}
+
+  <!-- Heading Starts Here -->
+  <div class="page-heading header-text">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Регистрация</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Heading Ends Here -->
+
+  <!-- Contact Us Starts Here -->
+  <div class="contact-us">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="contact-form">
+            <form id="contact" action="" method="post">
+              <div class="row">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <!-- <div class="col-md-12 col-sm-12">
+                  <fieldset>
+                    <input name="name" type="text" id="name" placeholder="Your name" required="">
+                  </fieldset>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <fieldset>
+                    <input name="email" type="text" id="email" placeholder="Your email" required="">
+                  </fieldset>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <fieldset>
+                    <input name="subject" type="text" id="subject" placeholder="Subject">
+                  </fieldset>
+                </div>
+                <div class="col-lg-12">
+                  <fieldset>
+                    <textarea name="message" rows="6" id="message" placeholder="Your message" required=""></textarea>
+                  </fieldset>
+                </div> -->
+                <div class="col-lg-12">
+                  <fieldset>
+                    <button type="submit" id="form-submit" class="main-button">Регистрация</button>
+                  </fieldset>
+                </div>
+              </div>
+            </form>
+        </div>
+        </div>
+        <div class="col-md-6">
+          <div class="right-content">
+            <div class="section-heading">
+              <h2>Зачем нужна регистрация?</h2>
+              <p>Это позволит хранить и создавать новые списки. Данные, указанные в форме регистрации не будут переданы третьим лицам.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

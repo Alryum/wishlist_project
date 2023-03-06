@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+<!-- Page Content -->
+<!-- Banner Starts Here -->
+<div class="banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="header-text caption">
+          <h2>Создай свой список</h2>
+          <div id="search-section">
+            <form action="#">
+              <button type="button" class="btn btn-primary btn-lg">Создать</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Banner Ends Here -->
+
+<!-- Services Starts Here -->
+<div class="services-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-heading">
+          <span>Список желаемого</span>
+          <h2>Что мы предлагаем?</h2>
+          <p>Сервис, который позволяет вести список, который можно разместить в своих социальных сетях и больше не беспокоиться о том, что дарить конкретному человеку.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="service-item">
+          <img src="https://dpru.obs.ru-moscow-1.hc.sbercloud.ru/images/article/2022/08/17/2f714dee-e377-408e-b72e-d217f3a042bc_F.jpg" height="150">
+          <h4>Арбуз</h4>
+          <p>Давно хотел, чтобы мне подарили арбуз.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="service-item">
+          <img src="https://www.zr.ru/_ah/img/8qOjO27kP0lcnSnwaS3KTQ=h625" height="150">
+          <h4>Автомобиль</h4>
+          <p>Хочу машину на новый год</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="service-item">
+          <img src="https://cs.pikabu.ru/post_img/big/2013/07/14/11/1373822205_927003700.jpg" height="150">
+          <h4>Коврик для мышки</h4>
+          <p>How do rotate text is MSpoint???</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Services Ends Here -->
+{% endblock %}

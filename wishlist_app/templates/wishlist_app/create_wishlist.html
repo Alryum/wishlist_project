@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}Редактирование{% endblock %}
+
+{% block content %}
+
+  <!-- Heading Starts Here -->
+  <div class="page-heading header-text">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Редактирование</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Heading Ends Here -->
+
+  <!-- Contact Us Starts Here -->
+  <div class="contact-us">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="contact-form">
+            <form id="contact" action="" method="post" enctype="multipart/form-data">
+              <div class="row">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="col-lg-12">
+                  <fieldset>
+                    <button type="submit" id="form-submit" class="main-button">Создать</button>
+                  </fieldset>
+                  <br>
+                </div>
+              </div>
+            </form>
+        </div>
+        </div>
+        <div class="col-md-6">
+          <div class="right-content">
+            <div class="section-heading">
+              <h2>Введите данные для создания / редактирования элемента</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

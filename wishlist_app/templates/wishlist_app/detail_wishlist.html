@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Ваши списки{% endblock %}
+
+{% block content %}
+  <!-- Page Content -->
+  <!-- Heading Starts Here -->
+  <div class="page-heading header-text">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>{{wishlist.title}}</h1>
+          <h1>{{wishlist.price}} руб.</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Heading Ends Here -->
+
+
+  <!-- Services Starts Here -->
+  <div class="services-section services-page">
+    <div class="container">
+        <div class="detail-text">
+            <h1>{{wishlist.description}}</h1>
+            <br>
+            <h1><a href="{{wishlist.link}}">Внешняя ссылка</a></h1>
+            <br>
+            {% if wishlist.image %}
+            <img src="{{ wishlist.image.url }}" height="700">
+            {% else %}
+            <img src="https://dn.ru/storage/images/aquasfera/zaglushki/latun/9017.jpg">
+            {% endif %}
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <div class="custom-button">
+        {% if wishlist.owner == request.user %}
+        <form action="{% url 'update_wishlist' wishlist.pk %}" method="get">
+          <button type="submit" class="btn btn-warning">Изменить</button>
+        </form>
+        <br>
+        <form action="{% url 'delete_wishlist' wishlist.pk %}" method="get">
+          <button type="submit" class="btn btn-danger">Удалить</button>
+        </form>
+        <br>
+        {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Services Ends Here -->
+{% endblock %}
