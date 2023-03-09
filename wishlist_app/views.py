@@ -79,10 +79,6 @@ class UpdateWishlist(LoginRequiredMixin, UpdateView):
             raise PermissionDenied()
         return super().post(request, *args, **kwargs)
 
-    # def get_queryset(self):
-    #     base_qs = super(UpdateWishlist, self).get_queryset()
-    #     return base_qs.filter(owner=self.request.user)
-
 
 class DeleteWishlist(LoginRequiredMixin, DeleteView):
     model = Wishlist
