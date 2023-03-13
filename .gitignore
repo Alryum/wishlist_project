@@ -6,7 +6,8 @@ __pycache__
 db.sqlite3
 media
 
-static/settings.py
+dev.env
+
 # Backup files # 
 *.bak 
 
